@@ -9,6 +9,8 @@ header {
     display: flex;
     overflow-y: hidden;
     transition: 500ms;
+    position: fixed;
+    top: 0;
 
     @media #{$media-query} {
         flex-direction: column;
