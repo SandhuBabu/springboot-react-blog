@@ -1,8 +1,9 @@
 import React from 'react'
-import './Header.scss'
+import { NavLink } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { AiOutlineMenu } from 'react-icons/ai';
 import logo from '../../assets/logo-t.png'
+import './Header.scss'
 
 const Header = () => {
     const handleHeader = () => {
@@ -16,19 +17,22 @@ const Header = () => {
     return (
         <>
             <header style={{ height: "5em" }} className='header'>
-                <div className="logo"><img src={logo} alt="" /></div>
+                <div className="logo">
+                    {/* BLOG APP */}
+                    <img src={logo} alt="" />
+                </div>
 
                 <ul>
-                    <p>Home</p>
-                    <p>Home</p>
-                    <p>Home</p>
-                    <p>Home</p>
+                    <li><NavLink to="/"><span>Home</span></NavLink></li>
+                    <li><NavLink to="/blog"><span>Blog</span></NavLink></li>
+                    <li><NavLink to="/about"><span>About</span></NavLink></li>
+                    <li><NavLink to="/contact"><span>Contact Me</span></NavLink></li>
                 </ul>
 
-                {/* <div className="util-btns">
+                <div className="util-btns">
                     <button className='open-search' onClick={handleHeader}><BsSearch /></button>
                     <button className='menu-toggle' onClick={handleHeader}><AiOutlineMenu /></button>
-                </div> */}
+                </div>
             </header>
         </>
     )

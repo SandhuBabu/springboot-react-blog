@@ -4,55 +4,87 @@ $media-query: "screen and (max-width: #{$breakpoint})";
 
 header {
     width: 100%;
-    height: 4em;
-    background-color: #1f28375e;    
-    background-color: #2b6ee2;    
-    transition: height 500ms;
+    height: 5em;
+    background-color: rgba(255, 0, 0, 0.178);
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
+    overflow-y: hidden;
+    transition: 500ms;
 
     @media #{$media-query} {
-        display: flex;
         flex-direction: column;
-        align-items: flex-start;
     }
 }
 
-header{
-    .logo {
-        width: 15em;
-        height: 5em;
-        background-color: red;
-        height: 5em !important;
-        
-        img {
-            height: 3em;
-            @media #{$media-query}{
-                height: 5em;
+.logo {
+    width: 20em;
+    height: 5em;
+    background-color: blue;
+    display: grid;
+    place-items: center;
+
+    img {
+        height: 3em;
+    }
+}
+
+
+header {
+    ul {
+        height: 1.5em;
+
+        @media #{$media-query} {
+            height: calc(100% - 5em);
+            padding-left: 2em;
+            list-style: none;
+            margin-top: 1em;
+        }
+
+        li {
+            @media #{$media-query} {
+                margin-top: .5em;
+            }
+            a {
+                width: auto;
+                letter-spacing: .5px;
+
+                span {
+                    position: relative;
+                    width: 100%;
+                    color: $white;
+
+                    &::after {
+                        transition: all 300ms;
+                        position: absolute;
+                        content: '';
+                        bottom: -3px;
+                        left: 0;
+                        width: 0%;
+                        height: 1.5px;
+                    }
+                }
+            }
+
+            a.active,
+            a:hover {
+
+                span {
+                    color: $main;
+
+                    &::after {
+                        width: 100%;
+                        background-color: $main;
+                    }
+                }
             }
         }
     }
 }
 
 header {
-    ul {
-        display: flex;
-        height: 1em;
-        overflow: hidden;
-
-        @media #{$media-query} {
-            flex-direction: column;
-            // height: auto;
-        }
-    }
-}
-
-header {
     .util-btns {
-        height: 4em;
-        float: right;
+        @media #{$media-query} {
+            position: absolute;
+            right: 0;
+        }
     }
 }
