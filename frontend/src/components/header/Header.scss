@@ -24,7 +24,13 @@ header {
 
     img {
         height: 3em;
+
+        @media #{$media-query} {
+            height: 5em;
+            transform: scale(.75);
+        }
     }
+    
 }
 
 
