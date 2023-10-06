@@ -1,0 +1,44 @@
+@import 'variables';
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    max-width: 100%;
+    word-wrap: break-word;
+    background-color: $bg1;
+    border: none;
+    border-radius: 5px;
+    transition: all 200ms;
+    scroll-behavior: smooth;
+    color: $white;
+
+    &::-webkit-scrollbar {
+        width: .5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $sec-s;
+        border-radius: .25em;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    padding:  7em 3em 3em 3em;
+}

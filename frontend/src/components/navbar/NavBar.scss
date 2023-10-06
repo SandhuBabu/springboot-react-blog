@@ -1,0 +1,250 @@
+@import '../../styles/variables.scss';
+$nav-breakpoint: 940px;
+
+@mixin topButtonCommons {
+    color: $main;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 0 5em;
+    display: flex;
+    align-items: center;
+    height: 5em;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: #1f28375e;    
+    
+    @media (max-width: $nav-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: safe;
+        height: 5em;
+        overflow: hidden;
+        padding: 1em 1em 1em 1em;
+
+        &.active {
+            height: auto;
+        }
+    }
+
+    .logo-top {
+        display: grid;
+        place-items: center;
+        width: 15em;
+
+        @media screen and (max-width: $nav-breakpoint) {
+            display: block;
+            justify-content: flex-start;
+            width: 100%;
+        }
+    }
+
+    img {
+        height: 3em;
+    }
+
+
+    ul {
+        width: calc(100% - 33em);
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        column-gap: 4em;
+        flex: 1;
+
+        @media screen and (max-width: $nav-breakpoint) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 2em;
+        }
+
+        li {
+            @media screen and (max-width: $nav-breakpoint) {
+                margin: 1em 0;
+            }
+
+            a {
+                width: auto;
+                letter-spacing: .5px;
+
+                span {
+                    position: relative;
+                    width: 100%;
+                    color: $white;
+
+                    &::after {
+                        transition: all 300ms;
+                        position: absolute;
+                        content: '';
+                        bottom: -3px;
+                        left: 0;
+                        width: 0%;
+                        height: 1.5px;
+                    }
+                }
+            }
+
+            a.active,
+            a:hover {
+
+                span {
+                    color: $main;
+
+                    &::after {
+                        width: 100%;
+                        background-color: $main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+nav {
+    .login-btn {
+
+
+        @media screen and (max-width: $nav-breakpoint) {
+            width: 100%;
+            padding-left: 2em;
+        }
+
+        button {
+            background-color: $main;
+            width: 7em;
+            height: 3em;
+            border-radius: 5px;
+            border: none;
+            color: $white;
+
+            &:hover {
+                background-color: $main-s;
+            }
+        }
+    }
+}
+
+nav {
+    form {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0, 0);
+        background-color: $bg1;
+
+        @media screen and (max-width: $nav-breakpoint) {
+            height: 4em;
+            width: calc(100% - 2em);
+            padding: 0 .5em;
+            margin: 0 1em;
+        }
+
+        &.hidden {
+            transform: translateY(-6em);
+        }
+
+        &.active {
+            transform: translate(0);
+        }
+
+        input {
+            width: 40em;
+            height: 3em;
+            background: $bg1;
+            border: 1px solid $main-s;
+            border-radius: 5px;
+            padding: 0 1em;
+
+            @media screen and (max-width: $nav-breakpoint) {
+                width: calc(100% - 6em);
+            }
+
+            &:focus {
+                border: 2px solid $main;
+            }
+        }
+
+        button {
+            width: 3em;
+            height: 3em;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            color: $white;
+
+            &.search-form {
+                background-color: $main;
+
+                &:hover {
+                    background-color: $main-s;
+                }
+            }
+
+            &.cancel-form {
+                background-color: $sec;
+
+                &:hover {
+                    background-color: $sec-s;
+                }
+            }
+        }
+
+    }
+}
+
+nav {
+    .util-btns {
+        display: flex;
+
+        button {
+            background: transparent;
+            margin-right: 2em;
+
+            &.menu-toggle {
+                @include topButtonCommons();
+                display: none;
+
+                @media screen and (max-width: $nav-breakpoint) {
+                    display: block;
+                }
+            }
+
+            &.open-search {
+                @include topButtonCommons();
+
+                // @media screen and (max-width: $nav-breakpoint) {
+                //     position: absolute;
+                //     top: 1.5em;
+                //     right: 3em;
+                // }
+
+                &:active {
+                    color: $white;
+                }
+            }
+        }
+
+        @media screen and (max-width: $nav-breakpoint) {
+            position: absolute;
+            top: 1.5em;
+            right: 0em;
+        }
+    }
+}
