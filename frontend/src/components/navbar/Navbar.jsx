@@ -16,7 +16,7 @@ const Navbar = () => {
     const toggleSearchForm = (ref) => ref.current.classList.toggle("hidden")
 
     const handleMenu = () => {
-        document.querySelector(".nav-bar").style.height = "auto"
+        document.querySelector(".nav-bar").style.height = "20"
         // console.log(navRef.current.classList);
         // navRef.current.classList.toggle("active")
     }

@@ -8,12 +8,14 @@ import './Header.scss'
 const Header = () => {
     const handleHeader = () => {
         const height = document.querySelector('header').style.height;
+        console.log("fdf");
         if (height === "5em") {
-            document.querySelector('header').style.height = "15em"
+            document.querySelector('header').style.height = "20em"
             return
         }
-        document.querySelector('header').style.height = "5em"
+        document.querySelector('header').style.height = "15em"
     }
+    
     return (
         <>
             <header style={{ height: "5em" }} className='header'>
@@ -33,6 +35,9 @@ const Header = () => {
                     <button className='open-search' onClick={handleHeader}><BsSearch /></button>
                     <button className='menu-toggle' onClick={handleHeader}><AiOutlineMenu /></button>
                 </div>
+
+                <div className='login-btn'><button className='main-btn'>Login</button></div>
+
             </header>
         </>
     )

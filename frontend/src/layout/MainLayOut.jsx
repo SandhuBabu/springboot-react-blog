@@ -6,8 +6,8 @@ import Header from '../components/header/Header'
 const MainLayOut = () => {
   return (
     <>
-      {/* <Navbar /> */}
-      <Header />
+      <Navbar />
+      {/* <Header /> */}
       <div className='container'>
         <Outlet />
       </div>
