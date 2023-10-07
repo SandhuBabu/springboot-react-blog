@@ -17,6 +17,10 @@ $black: #1d1a1a;
 
 $transition-300: all 300ms;
 
-$breakpoint: 820px;
-$breakpoint1: 820px;
-$media-query-1: "screen and (max-width: #{$breakpoint1})";
+// breakpoints
+$breakpoint-md: 820px;
+$breakpoint-mob: 820px;
+
+// media queries
+$media-query-md: "screen and (max-width: #{$breakpoint-md})"; // medium
+$media-query-mob: "screen and (max-width: #{$breakpoint-mob})"; // mobile

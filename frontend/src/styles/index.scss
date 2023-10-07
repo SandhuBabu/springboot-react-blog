@@ -11,6 +11,18 @@
   list-style: none;
 }
 
+h1, h1, h3, h4, h5, h6,
+p, div {
+ &::selection {
+  background-color: $sec-s;
+  user-select: text;
+ } 
+}
+
+span, a, button {
+  user-select: none;
+}
+
 h1 {
   font-weight: 700;
 }
@@ -63,4 +75,9 @@ button {
 
 .container {
   padding: 7em 3em 3em 3em;
+
+  &.min-h {
+    min-height: 95vh;
+  }
 }
+

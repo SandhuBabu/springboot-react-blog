@@ -4,15 +4,15 @@ import "./Landing.scss";
 const Landing = () => {
   return (
     <div className="landing">
-      <p>
+      <div>
         <h1>TechScape </h1>
-        <p>
+        <div>
           <h2>Discover.</h2>
           <h2>Innovate.</h2>
           <h2>Build.</h2>
-        </p>
+        </div>
         <button>Contact Me</button>
-      </p>
+      </div>
     </div>
   );
 };

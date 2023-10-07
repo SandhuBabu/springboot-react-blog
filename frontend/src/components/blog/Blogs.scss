@@ -1,0 +1,53 @@
+@import "../../styles/variables.scss";
+
+@mixin clamp($lines) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+article {
+    width: 100%;
+    margin-top: 4em;
+    padding: 10px;
+
+    h3 {
+        @include clamp(1);
+
+        .pen {
+            font-size: 1.2em;
+            margin-right: 1em;
+        }
+    }
+
+    p {
+        width: 60%;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 28px;
+        margin-top: 1em;
+        margin-bottom: 2em;
+
+        //    clamp to 2 lines
+        @include clamp(2);
+
+
+        @media #{$media-query-md} {
+            width: 100%;
+        }
+    }
+
+    a {
+        border: 2px solid $main-s;
+        padding: .5em .75em;
+        color: $white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+            background-color: $main-s;
+        }
+    }
+}

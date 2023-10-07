@@ -24,7 +24,7 @@ const dataList = [
 export const Latest = () => {
   return (
     <div className="latest">
-      <h2>Latest Updates</h2>
+      <h2 id="top">Latest Blogs</h2>
 
       {
         dataList.map((obj, index) => <LatestCard key={index} data={obj} />)

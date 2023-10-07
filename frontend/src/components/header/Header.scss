@@ -5,6 +5,7 @@
     height: 3em;
     border: none;
     border-radius: 5px;
+    font-size: .9em;
     margin-left: 5px;
     background-color: $bgc;
     color: $white;
@@ -14,18 +15,12 @@
     }
 }
 
-
-
 header {
     width: 100%;
     height: 5em;
-<<<<<<< HEAD
     backdrop-filter: blur(5px);
-    background-color: #1f28375e;   
-=======
     background-color: $headerbg;
     backdrop-filter: blur(5px);
->>>>>>> 8c70883548c8a2bdfc3d4930c8590b98eaba1701
     display: flex;
     overflow-y: hidden;
     transition: 500ms;
@@ -33,7 +28,7 @@ header {
     top: 0;
     z-index: 99;
 
-    @media #{$media-query-1} {
+    @media #{$media-query-md} {
         flex-direction: column;
         padding-bottom: 1em;
     }
@@ -48,7 +43,7 @@ header {
     img {
         height: 3em;
 
-        @media #{$media-query-1} {
+        @media #{$media-query-md} {
             height: 5em;
             transform: scale(.75);
         }
@@ -59,19 +54,16 @@ header {
 // links
 header {
     ul {
-        height: 1.5em;
-<<<<<<< HEAD
+        height: $media-query-md.5em;
         list-style: none;
-=======
         display: flex;
         justify-content: center;
         align-items: center;
         height: 5em;
-        column-gap: 1.25em;
+        column-gap: 1em;
         width: calc(100% - 20em - 7em - 8em);
->>>>>>> 8c70883548c8a2bdfc3d4930c8590b98eaba1701
 
-        @media #{$media-query-1} {
+        @media #{$media-query-md} {
             height: calc(100% - 5em);
             width: auto;
             flex-direction: column;
@@ -82,13 +74,13 @@ header {
         }
 
         li {
-            @media #{$media-query-1} {
+            @media #{$media-query-md} {
                 margin-top: .5em;
             }
             a {
                 width: auto;
                 letter-spacing: .5px;
-                font-size: 13px;
+                font-size: 15px;
 
                 span {
                     position: relative;
@@ -102,7 +94,7 @@ header {
                         bottom: -3px;
                         left: 0;
                         width: 0%;
-                        height: 1.5px;
+                        height: .5px;
                     }
                 }
             }
@@ -139,12 +131,12 @@ header {
         .menu-toggle {
             @include formButtonsNav($main, $main-s);
             display: none;
-            @media #{$media-query-1} {
+            @media #{$media-query-md} {
                 display: block;
             }
         }
 
-        @media #{$media-query-1} {
+        @media #{$media-query-md} {
             position: absolute;
             right: 1em;
         }
@@ -158,7 +150,7 @@ header {
         align-items: center;
         button {
             width: 7em;
-            height: 2.5em;
+            height: 3.2em;
             border: none;
             border-radius: 5px;
             background-color: $main;
@@ -169,7 +161,7 @@ header {
             }
         }
 
-        @media #{$media-query-1} {
+        @media #{$media-query-md} {
             padding-left: 2em;
         }
     }
@@ -203,7 +195,7 @@ header {
                 border: 2px solid $main;
             }
 
-            @media #{$media-query-1} {
+            @media #{$media-query-md} {
                 width: calc(100% - 10em);
             }
         }
