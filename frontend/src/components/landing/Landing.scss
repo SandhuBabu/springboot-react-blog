@@ -1,0 +1,77 @@
+@import "../../styles//variables.scss";
+
+.landing {
+  width: 100%;
+  height: 70vh;
+  // background-image: url("https://wallpapercave.com/wp/wp2936933.jpg");
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 0 8em 0 3em;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    z-index: -1;
+    background-image: url("https://d19d5sz0wkl0lu.cloudfront.net/dims4/default/8cc4eae/2147483647/resize/800x%3E/quality/90/?url=https%3A%2F%2Fatd-brightspot.s3.amazonaws.com%2F45%2Fb8%2Fda6f0e164398b79ebe1985a28ad9%2Fadobestock-325326436.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    filter: brightness(50%);
+
+    @media #{$media-query-1} {
+      height: 50vh;
+    }
+  }
+
+  @media #{$media-query-1} {
+    height: 50vh;
+    padding-right: 5em;
+  }
+
+  p {
+    p {
+      @media #{$media-query-1} {
+        display: flex;
+        h2 {
+          font-size: 0.85em;
+        }
+      }
+    }
+    h1 {
+      opacity: 0.95;
+
+      @media #{$media-query-1} {
+        font-size: 1.25em;
+        width: 100%;
+      }
+    }
+
+    h2 {
+      opacity: 0.85;
+      font-weight: 600;
+    }
+
+    button {
+      border: none;
+      border-radius: 5px;
+      background-color: $main;
+      color: $white;
+      margin-top: 1em;
+      transition: $transition-300;
+      font-size: 14px;
+      padding: 0.5em 1em;
+
+      &:hover {
+        background-color: $main-s;
+      }
+    }
+  }
+}
