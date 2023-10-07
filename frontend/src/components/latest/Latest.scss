@@ -1,0 +1,113 @@
+@import "../../styles//variables.scss";
+
+@mixin clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.latest {
+  padding: 1em;
+}
+
+.latest-card {
+  width: 100%;
+  height: 20em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  background-color: $bg2;
+  padding: 1em;
+
+  @media #{$media-query-1} {
+    flex-direction: column;
+    height: auto;
+  }
+
+  &:hover {
+    figure {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: $bg3;
+    flex-direction: row-reverse;
+
+    @media #{$media-query-1} {
+      flex-direction: column;
+    }
+  }
+
+  figure {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+
+    @media #{$media-query-1} {
+      width: 100%;
+      height: 10em;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 1em;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: $transition-300;
+
+      @media #{$media-query-1} {
+        width: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  div {
+    width: 60%;
+    padding: 1em;
+
+    @media #{$media-query-1} {
+      width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      @include clamp(2);
+      margin-bottom: 1em;
+
+      @media #{$media-query-1} {
+        text-align: left;
+      }
+    }
+
+    p {
+      @include clamp(6);
+      margin-bottom: 1em;
+    }
+
+    .read-more-latest {
+      padding: 0.5em 1em;
+      color: $white;
+      background-color: $main;
+      border-radius: 5px;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+
+      &:hover {
+        background-color: $main-s;       
+      }
+
+      @media #{$media-query-1} {
+        padding: 0.35em 0.75em;
+      }
+    }
+  }
+}

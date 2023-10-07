@@ -1,6 +1,4 @@
 @import '../../styles/variables.scss';
-$breakpoint : 920px;
-$media-query: "screen and (max-width: #{$breakpoint})";
 
 @mixin formButtonsNav($bgc, $bgch) {
     width: 3em;
@@ -21,15 +19,16 @@ $media-query: "screen and (max-width: #{$breakpoint})";
 header {
     width: 100%;
     height: 5em;
-    background-color: #1f283785;
+    background-color: $headerbg;
     backdrop-filter: blur(5px);
     display: flex;
     overflow-y: hidden;
     transition: 500ms;
     position: fixed;
     top: 0;
+    z-index: 99;
 
-    @media #{$media-query} {
+    @media #{$media-query-1} {
         flex-direction: column;
         padding-bottom: 1em;
     }
@@ -44,7 +43,7 @@ header {
     img {
         height: 3em;
 
-        @media #{$media-query} {
+        @media #{$media-query-1} {
             height: 5em;
             transform: scale(.75);
         }
@@ -60,10 +59,10 @@ header {
         justify-content: center;
         align-items: center;
         height: 5em;
-        column-gap: 2em;
+        column-gap: 1.25em;
         width: calc(100% - 20em - 7em - 8em);
 
-        @media #{$media-query} {
+        @media #{$media-query-1} {
             height: calc(100% - 5em);
             width: auto;
             flex-direction: column;
@@ -75,12 +74,13 @@ header {
         }
 
         li {
-            @media #{$media-query} {
+            @media #{$media-query-1} {
                 margin-top: .5em;
             }
             a {
                 width: auto;
                 letter-spacing: .5px;
+                font-size: 13px;
 
                 span {
                     position: relative;
@@ -131,12 +131,12 @@ header {
         .menu-toggle {
             @include formButtonsNav($main, $main-s);
             display: none;
-            @media #{$media-query} {
+            @media #{$media-query-1} {
                 display: block;
             }
         }
 
-        @media #{$media-query} {
+        @media #{$media-query-1} {
             position: absolute;
             right: 1em;
         }
@@ -161,7 +161,7 @@ header {
             }
         }
 
-        @media #{$media-query} {
+        @media #{$media-query-1} {
             padding-left: 2em;
         }
     }
@@ -195,7 +195,7 @@ header {
                 border: 2px solid $main;
             }
 
-            @media #{$media-query} {
+            @media #{$media-query-1} {
                 width: calc(100% - 10em);
             }
         }
