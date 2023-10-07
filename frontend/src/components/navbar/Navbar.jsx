@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineMenu } from 'react-icons/ai'
-import NavSearch from './NavSearch'
 
-import './Navbar.scss'
+
+// import './Navbar.scss'
 import Logo from '../../assets/logo-t.png'
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
 
     const navbar = <>
         <nav style={{height: "5em"}} ref={navRef} className='nav-bar'>
-            <NavSearch ref={formRef} toggleSearchForm={toggleSearchForm} />
+            {/* <NavSearch ref={formRef} toggleSearchForm={toggleSearchForm} /> */}
 
             <div  className='logo-top'><Link to="/"><img src={Logo} alt="" /></Link></div>
 
