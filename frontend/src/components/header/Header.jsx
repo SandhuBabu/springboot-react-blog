@@ -7,7 +7,7 @@ import logo from "../../assets/logo-t.png";
 import "./Header.scss";
 
 const Header = () => {
-  const opnSearch = () => {
+  const openSearch = () => {
     document.querySelector(".nav-search").style.transform = "translateY(0em)";
   };
 
@@ -64,11 +64,11 @@ const Header = () => {
         </ul>
 
         <div className="login-btn">
-          <button onClick={handleHeader}>Login</button>
+          <button>Login</button>
         </div>
 
         <div className="util-btns">
-          <button className="open-search" onClick={opnSearch}>
+          <button className="open-search" onClick={openSearch}>
             <BsSearch />
           </button>
           <button className="menu-toggle" onClick={handleHeader}>
