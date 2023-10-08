@@ -1,20 +1,14 @@
 @import '../../styles/variables.scss';
 
 @mixin formButtonsNav($bgc, $bgch) {
-    width: 2.5em;
-    height: 2.5em;
+    width: 2.1em;
+    height: 2.1em;
     border: none;
     border-radius: 5px;
-    font-size: .9em;
+    font-size: 1.25em;
     margin-left: 5px;
-    background-color: transparent;
     background-color: $bgc;
     color: $white;
-    color: $white;
-
-    &:hover {
-        background-color: $bgch;
-    }
 }
 
 header {
@@ -128,16 +122,16 @@ header {
 
         .open-search {
             @include formButtonsNav($main, $main-s);
-            padding-top: 5px;
-            padding-left: 1px;
+            padding-top: 6px;
         }
 
         .menu-toggle {
             @include formButtonsNav($main, $main-s);
             display: none;
+            padding-top: 5px;
+
             @media #{$media-query-md} {
                 display: block;
-                padding-top: 4px;
             }
         }
 
@@ -156,7 +150,7 @@ header {
 
         button {
             width: 7em;
-            height: 2.5em;
+            height: 3em;
             border: none;
             border-radius: 5px;
             background-color: $main;
