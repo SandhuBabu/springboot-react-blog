@@ -35,13 +35,14 @@ header {
     height: 5em;
     display: grid;
     place-items: center;
+    transform: scale(.7);
 
     img {
-        height: 3em;
-
+        width: 100%;
+        object-fit: contain;
         @media #{$media-query-md} {
             height: 5em;
-            transform: scale(.75);
+            transform: scale(.8);
         }
     }
     

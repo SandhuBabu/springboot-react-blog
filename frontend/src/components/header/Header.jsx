@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 import Search from "./Search";
-import logo from "../../assets/logo-t.png";
+import logo from "../../assets/logo.png";
 import "./Header.scss";
 
 const Header = () => {
