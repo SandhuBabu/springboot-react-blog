@@ -23,12 +23,7 @@ span, a, button {
   user-select: none;
 }
 
-h1 {
-  font-weight: 700;
-}
-
-h2,
-h3 {
+h1, h2, h3 {
   font-weight: 600;
 }
 
@@ -74,6 +69,7 @@ button {
 }
 
 .container {
+  position: relative;
   padding: 7em 3em 3em 3em;
 
   &.min-h {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { BsPencilSquare } from "react-icons/bs"
+import Pagination from '../pagination/Pagination'
 import "./Blogs.scss"
 
 const blogs = [
@@ -8,12 +9,12 @@ const blogs = [
     { title: "Mastering Web Development: A Comprehensive Guide" },
     { title: "Cybersecurity Unveiled: Protecting Your Digital World" },
     { title: "Data Science Demystified: Insights and Innovations" },
-    { title: "Mobile App Development Trends: What's Next in Tech" },
-    { title: "Cloud Computing: From Basics to Best Practices" },
-    { title: "DevOps Decoded: Bridging the Gap Between Dev and Ops" },
-    { title: "UI/UX Design: Crafting Exceptional User Experiences" },
-    { title: "Blockchain Beyond Cryptocurrency: Transforming Industries" },
-    { title: "Machine Learning Marvels: Algorithms and Applications" },
+    // { title: "Mobile App Development Trends: What's Next in Tech" },
+    // { title: "Cloud Computing: From Basics to Best Practices" },
+    // { title: "DevOps Decoded: Bridging the Gap Between Dev and Ops" },
+    // { title: "UI/UX Design: Crafting Exceptional User Experiences" },
+    // { title: "Blockchain Beyond Cryptocurrency: Transforming Industries" },
+    // { title: "Machine Learning Marvels: Algorithms and Applications" },
 ]
 
 const Blogs = () => {
@@ -31,6 +32,7 @@ const Blogs = () => {
                     </article>
                 ))
             }
+            <Pagination />
         </>
     )
 }

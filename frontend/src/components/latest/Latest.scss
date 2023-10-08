@@ -11,6 +11,10 @@
   padding: 1em;
   margin: 3em 0 0 0;
 
+  @media #{$media-query-mob} {
+    margin-top: 2em;
+  }
+
   h2 {
     margin-bottom: 1em;
   }
@@ -31,9 +35,17 @@
     background-color: $bg2;
   }
 
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
   @media #{$media-query-md} {
     flex-direction: column;
     height: auto;
+
+    &:nth-child(odd) {
+      flex-direction: column;
+    }
   }
 
   &:hover {
@@ -54,7 +66,7 @@
       height: 10em;
       display: flex;
       justify-content: flex-start;
-      margin-left: 1em;
+      // margin-left: 1em;
     }
 
     @media #{$media-query-mob} {
@@ -81,7 +93,7 @@
   }
 
   div {
-    width: 60%;
+    width: 80%;
     padding: 1em;
 
     @media #{$media-query-md} {
@@ -103,6 +115,7 @@
       margin-bottom: 1em;
       font-size: 14px;
       line-height: 32px;
+      width: 100%;
     }
 
     .read-more-latest {

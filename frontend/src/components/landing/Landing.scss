@@ -31,24 +31,24 @@
 
   @media #{$media-query-md} {
     height: 55vh;
-    // padding-right: 15em;
+    padding-right: 6em;
+  }
+
+  @media #{$media-query-mob} {
+    height: 45vh;
   }
 
   div {
-    p {
-      @media #{$media-query-md} {
-        display: flex;
-        h2 {
-          font-size: 0.85em;
-        }
-      }
-    }
     h1 {
       opacity: 0.95;
 
       @media #{$media-query-md} {
         font-size: 1.25em;
         width: 100%;
+      }
+
+      @media #{$media-query-mob} {
+        padding-top: 3em;
       }
     }
 

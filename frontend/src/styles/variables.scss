@@ -11,15 +11,19 @@ $main-s: #1c8d9e;
 $sec: #0e6f7e70;
 $sec-s: #147281a3;
 
+$sec: #209bad70;
+$sec-s: #3ab7ca9d;
+
 $white: #fff;
 $smoke: #b3acac;
 $black: #1d1a1a;
 
 $transition-300: all 300ms;
+$transition-500: all 500ms;
 
 // breakpoints
 $breakpoint-md: 820px;
-$breakpoint-mob: 820px;
+$breakpoint-mob: 620px;
 
 // media queries
 $media-query-md: "screen and (max-width: #{$breakpoint-md})"; // medium

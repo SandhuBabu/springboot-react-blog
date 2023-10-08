@@ -20,6 +20,10 @@ const Header = () => {
     document.querySelector("header").style.height = "5em";
   };
 
+  const closeHeaderNavClick = () => {
+    document.querySelector("header").style.height = "5em";
+  }
+
   return (
     <>
       <header style={{ height: "5em" }} className="header">
@@ -34,33 +38,33 @@ const Header = () => {
         <ul>
           <li>
             <NavLink to="/">
-              <span>Home</span>
+              <span onClick={closeHeaderNavClick}>Home</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/blogs">
-              <span>Blogs</span>
+              <span onClick={closeHeaderNavClick}>Blogs</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/projects">
-              <span>Projects</span>
+              <span onClick={closeHeaderNavClick}>Projects</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/about">
-              <span>About</span>
+              <span onClick={closeHeaderNavClick}>About</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact">
-              <span>Contact</span>
+              <span onClick={closeHeaderNavClick}>Contact</span>
             </NavLink>
           </li>
         </ul>
 
         <div className="login-btn">
-          <button>Login</button>
+          <button onClick={handleHeader}>Login</button>
         </div>
 
         <div className="util-btns">
