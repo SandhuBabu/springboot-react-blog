@@ -111,11 +111,12 @@
     }
 
     p {
-      @include clamp(6);
+      @include clamp(4);
       margin-bottom: 1em;
       font-size: 14px;
       line-height: 32px;
       width: 100%;
+      text-align: justify;
     }
 
     .read-more-latest {

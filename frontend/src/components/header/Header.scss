@@ -1,13 +1,15 @@
 @import '../../styles/variables.scss';
 
 @mixin formButtonsNav($bgc, $bgch) {
-    width: 3em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     border: none;
     border-radius: 5px;
     font-size: .9em;
     margin-left: 5px;
+    background-color: transparent;
     background-color: $bgc;
+    color: $white;
     color: $white;
 
     &:hover {
@@ -60,7 +62,7 @@ header {
         justify-content: center;
         align-items: center;
         height: 5em;
-        column-gap: 1em;
+        column-gap: 1.65em;
         width: calc(100% - 20em - 7em - 8em);
 
         @media #{$media-query-md} {
@@ -126,6 +128,8 @@ header {
 
         .open-search {
             @include formButtonsNav($main, $main-s);
+            padding-top: 5px;
+            padding-left: 1px;
         }
 
         .menu-toggle {
@@ -133,6 +137,7 @@ header {
             display: none;
             @media #{$media-query-md} {
                 display: block;
+                padding-top: 4px;
             }
         }
 
@@ -148,9 +153,10 @@ header {
     .login-btn {
         display: flex;
         align-items: center;
+
         button {
             width: 7em;
-            height: 3.2em;
+            height: 2.5em;
             border: none;
             border-radius: 5px;
             background-color: $main;
