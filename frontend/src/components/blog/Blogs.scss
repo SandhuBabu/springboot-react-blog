@@ -1,73 +1,84 @@
 @import "../../styles/variables.scss";
 
 @mixin clamp($lines) {
-    display: -webkit-box;
-    -webkit-line-clamp: $lines;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-article {
+.blogs-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  padding-top: 3em;
+
+  @media #{$media-query-mob} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  article {
     width: 100%;
-    margin-top: 4em;
-    padding: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: $bg2;
+    transition: $transition-300;
+
+    &:hover {
+      background-color: $main;
+    }
 
     h3 {
-        @include clamp(1);
+      @include clamp(1);
 
-        .pen {
-            font-size: 1.2em;
-            margin-right: 1em;
-        }
+      .pen {
+        font-size: 1.2em;
+        margin-right: 1em;
+      }
     }
 
     p {
-        width: 85%;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 28px;
-        margin-top: 1em;
-        margin-bottom: 2em;
+      width: 85%;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 28px;
+      margin-top: 1em;
+      margin-bottom: 0.7em;
 
-        //    clamp to 2 lines
-        @include clamp(2);
+      //    clamp to 2 lines
+      @include clamp(4);
 
-
-        @media #{$media-query-md} {
-            width: 100%;
-        }
+      @media #{$media-query-md} {
+        width: 100%;
+      }
     }
 
     a {
-        border: 2px solid $main-s;
-        padding: .5em .75em;
-        color: $white;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
+      color: $white;
+      font-size: 12px;
 
-        &:hover {
-            background-color: $main-s;
-        }
+      &:hover {
+      }
     }
+  }
 }
 
-
-
 // button create in bloglist page
-button{
-    &.create {
-        background-color: transparent;
-        border: none;
-        color: $white;
-        border: 2px solid $main;
-        padding: .5em 1em;
-        border-radius: 5px;
-        transition: $transition-300;
+button {
+  &.create {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    border: 2px solid $main;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: $transition-300;
 
-        &:hover {
-            background-color: $main;
-            border-color: $main;
-        }
+    &:hover {
+      background-color: $main;
+      border-color: $main;
     }
+  }
 }

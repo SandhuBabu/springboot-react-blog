@@ -24,7 +24,9 @@ $transition-500: all 500ms;
 // breakpoints
 $breakpoint-md: 992px;
 $breakpoint-mob: 620px;
+$breakpoint-sm: 576px;
 
 // media queries
 $media-query-md: "screen and (max-width: #{$breakpoint-md})"; // medium
 $media-query-mob: "screen and (max-width: #{$breakpoint-mob})"; // mobile
+$media-query-sm: "screen and (max-width: #{$breakpoint-sm})"; // mobile

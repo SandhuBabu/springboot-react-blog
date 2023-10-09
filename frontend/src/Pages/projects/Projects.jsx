@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import ProjectCard from "../../components/projects/ProjectCard";
 
 const Projects = () => {
-    return (
-        <div className='container min-h'>
-            <h1>Projects</h1>
-        </div>
-    )
-}
+  return (
+    <div className="container min-h">
+      <ProjectCard />
+    </div>
+  );
+};
 
-export default Projects
+export default Projects;

@@ -11,6 +11,7 @@ const CreateBlog = ({handleForm}) => {
             <div className='input-group'>
                 <label htmlFor="title">Title</label>
                 <input type="text" name='title' required />
+                <span className='focus-border'></span>
             </div>
             <div className='input-group'>
                 <label htmlFor="image">Image</label>
