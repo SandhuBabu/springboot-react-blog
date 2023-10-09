@@ -1,9 +1,8 @@
 import React from "react";
-import Landing from "../../components/landing/Landing";
-import { Latest } from "../../components/latest/Latest";
+import { Latest, Landing } from "../../components";
 
 const Home = () => {
-  
+
   return (
     <>
       <Landing />

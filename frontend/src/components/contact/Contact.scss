@@ -1,0 +1,145 @@
+@import '../../styles//variables.scss';
+
+
+@mixin inputMixin {
+    border: 2px solid $sec-s;
+    border-radius: 5px;
+    padding-left: 1.3em;
+    transition: $transition-300;
+    letter-spacing: .5px;
+    min-height: 3em;
+    background: transparent;
+    color: $white;
+    font-size: 14px;
+    font-weight: 300;
+
+    &:focus {
+        border-color: $sec;
+    }
+
+    &:valid {
+        border-color: $main;
+    }
+
+    &:focus {
+        &:invalid {
+            border-color: rgba(255, 0, 0, 0.545);
+        }
+    }
+}
+
+.contact-form {
+    width: 100%;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input-group {
+        width: 60%;
+
+        @media #{$media-query-md} {
+            width: 100%;
+        }
+
+        label {
+            transform: translate(10px, -38px);
+            color: $smoke;
+            width: max-content;
+            padding: 0 5px;
+            transition: $transition-300;
+        }
+
+        input {
+            @include inputMixin();
+
+            &:focus~label,
+            &:valid~label {
+                background: $bg1;
+                color: $main;
+                transform: translate(5px, -59px);
+            }
+        }
+    }
+
+    .message-group {
+        width: 60%;
+        margin-top: 2em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media #{$media-query-md} {
+            width: 100%;
+        }
+
+        label {
+            position: absolute;
+            transform: translate(10px, 12px);
+            padding: 0 5px;
+            background-color: $bg1;
+            transition: $transition-300;
+            color: $smoke;
+        }
+
+        textarea {
+            width: 100%;
+            padding-top: 10px;
+            resize: vertical;
+            @include inputMixin();
+            min-height: 5em;
+
+            &:focus+label,
+            &:valid+label {
+                color: $main;
+                transform: translate(8px, -12px);
+            }
+        }
+
+    }
+
+    .button-group {
+        margin-top: 2em;
+        display: flex;
+        gap: 1em;
+        width: 60%;
+
+        @media #{$media-query-md} {
+            width: 100%;
+        }
+
+        button {
+            height: 3.5em;
+            border-radius: 5px;
+            width: 50%;
+            border: none;
+            background-color: $sec;
+            color: $main;
+            font-size: 14px;
+            transition: $transition-300;
+
+            &:hover {
+                background-color: $sec-s;
+            }
+
+            &:last-child {
+                background-color: $main;
+                color: $white;
+                &:hover {
+                    background-color: $main-s;
+                }
+
+                .btn-icon {
+                    transform: translateY(6px);
+                }
+            }
+            
+            .btn-icon {
+                font-size: 20px;
+                margin-left: 4px;
+                transform: translateY(4px);
+            }
+        }
+    }
+}

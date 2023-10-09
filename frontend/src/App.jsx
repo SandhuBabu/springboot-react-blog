@@ -1,29 +1,16 @@
-import React from 'react'
-import MainLayOut from './layout/MainLayOut'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/Home'
-import BlogList from './Pages/blogs/BlogList'
-import Projects from './Pages/projects/Projects'
+import React, { useEffect, useState } from 'react'
+import Loading from './components/loading/Loading'
+import { Router } from './router'
 
 const App = () => {
-    return (
-        <Routes>
-            <Route path='/' element={<MainLayOut />}>
-                <Route
-                    index={true}
-                    element={<Home />}
-                />
-                <Route 
-                    path='/blogs'
-                    element={<BlogList />}
-                />
-                <Route 
-                    path='/projects'
-                    element={<Projects />}
-                />
-            </Route>
-        </Routes>
-    )
+
+    const [load, setLoad] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {setLoad(true)}, 3000)
+    }, [])
+
+    return load ? <Router /> : <Loading />
 }
 
 export default App

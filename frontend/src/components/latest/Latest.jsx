@@ -21,7 +21,7 @@ const dataList = [
   },
 ];
 
-export const Latest = () => {
+const Latest = () => {
   return (
     <div className="latest">
       <h2 id="top">Latest Blogs</h2>
@@ -34,3 +34,5 @@ export const Latest = () => {
     </div>
   );
 };
+
+export default Latest

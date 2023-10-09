@@ -1,0 +1,78 @@
+@import "../../styles//variables.scss";
+
+.about {
+    h1 {
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    div {
+        padding: 0 2em;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 300;
+        margin-top: 1em;
+
+        &:last-child {
+            margin-top: 2em;
+            font-style: italic;
+        }
+    }
+
+    h4 {
+        margin-top: 2em;
+    }
+}
+
+.social {
+    width: max-content;
+    font-size: 1.25em;
+    position: fixed;
+    top: 5em;
+    left: 1em;
+
+    p {
+        margin-top: 1em;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .social-icon {
+            cursor: pointer;
+            &:hover {
+                color: $main;
+            }
+
+            &:hover + span {
+                visibility: visible;
+                transform: translateX(0);
+            }
+        }
+
+        span {
+            font-size: 14px;
+            background-color: $main;
+            padding: .5em 1em;
+            margin-left: 1.5em;
+            border-radius: 4px;
+            visibility: hidden;
+            transition: 100ms ease-in;
+            transform: translateX(10px);
+
+            &::after {
+                position: fixed;
+                content: "";
+                width: 1em;
+                height: 1em;
+                left: -.25em;
+                top: .69em;
+                z-index: -1;
+                transform: rotate(50deg);
+                background-color: $main;
+            }
+        }
+    }
+}

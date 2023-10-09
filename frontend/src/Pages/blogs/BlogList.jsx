@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import Blogs from '../../components/blog/Blogs'
-import CreateBlog from '../../components/blog/CreateBlog'
-import ScrollToTop from '../../components/utilities/ScrollToTop'
+import {ScrollToTop, CreateBlog, Blogs} from '../../components'
 
 const BlogList = () => {
 

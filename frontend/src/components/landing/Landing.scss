@@ -39,6 +39,8 @@
   }
 
   div {
+    margin-bottom: .5em;
+
     h1 {
       opacity: 0.95;
 
@@ -57,7 +59,7 @@
       font-weight: 600;
     }
 
-    button {
+    a {
       border: none;
       border-radius: 5px;
       background-color: $main;

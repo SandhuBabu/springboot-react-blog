@@ -3,13 +3,13 @@ import {AiOutlineCopyright} from 'react-icons/ai'
 import "./Footer.scss"
 
 const Footer = () => {
-    const date = new Date().getFullYear();
+    const year = new Date().getFullYear();
   return (
     <footer>
         <p>
             <AiOutlineCopyright />
-            <span>{date} </span>
-            Copyright: Sandhu Babu
+            <span>{year} </span>
+            Copyright: TechScape
         </p>
     </footer>
   )

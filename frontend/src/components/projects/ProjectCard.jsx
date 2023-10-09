@@ -46,7 +46,7 @@ const ProjectCard = () => {
         {projects.map((obj, key) => (
           <article key={key} className="projects-card">
             <figure>
-              <img src={obj.imagURL} alt="" />
+              <img src={obj.imagURL} alt="" loading="lazy" />
             </figure>
             <div className="project-details">
               <div>
