@@ -4,10 +4,11 @@ import { Router } from './router'
 
 const App = () => {
 
-    const [load, setLoad] = useState(false);
+    const [load, setLoad] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {setLoad(true)}, 3000)
+        
+        // setTimeout(() => {setLoad(true)}, 2000)
     }, [])
 
     return load ? <Router /> : <Loading />

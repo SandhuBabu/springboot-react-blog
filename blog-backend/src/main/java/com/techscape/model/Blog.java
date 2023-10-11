@@ -9,12 +9,14 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "blogs")
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Blog {
 
     @Id
@@ -27,10 +29,4 @@ public class Blog {
     private String content;
 
     private String imageURL;
-
-    Blog(String title, String content, String imageURL) {
-        this.title = title;
-        this.content = content;
-        this.imageURL = imageURL;
-    }
 }

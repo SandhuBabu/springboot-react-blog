@@ -5,15 +5,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.techscape.dto.ErrorDto;
@@ -24,11 +26,12 @@ import com.techscape.repository.BlogRepo;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/blog")
+@CrossOrigin(origins = { "http://localhost:3000", "http://127.0.0.1:3000"})
 public class BlogController {
 
-    private final BlogRepo blogRepo;
+    @Autowired
+    private BlogRepo blogRepo;
 
     @PostMapping("/add")
     public ResponseEntity<?> addBlog(
@@ -42,12 +45,12 @@ public class BlogController {
 
             String uploadDir = "src/main/resources/static/images";
             String fileName = file.getOriginalFilename().replace(" ", "-");
-            
+
             Path path = Paths.get(uploadDir);
             if (!Files.exists(path)){
                 Files.createDirectories(path);
             }
-            
+
             Path targetLoc = path.resolve(fileName);
             Files.copy(file.getInputStream(), targetLoc, StandardCopyOption.REPLACE_EXISTING);
 
@@ -66,14 +69,49 @@ public class BlogController {
             System.out.println(io);
             return ResponseEntity.internalServerError().body(errorDto);
         }
-         catch (FileException e) {
+        catch (FileException e) {
             ErrorDto errorDto = new ErrorDto(e.getCode(), e.getMessage());
             return ResponseEntity.badRequest().body(errorDto);
         }
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getBlogById(@PathVariable Long id) {
+    @GetMapping("/all")
+    public ResponseEntity<?> getBlogById() {
         return ResponseEntity.ok(blogRepo.findAll());
+    }
+
+    @GetMapping
+    public ResponseEntity<Map<String, Object>> pageinatedBlogs(@RequestParam(defaultValue = "1", required = false) int pageNo) {
+
+        if(pageNo < 1) pageNo = 1;
+        try {
+            Pageable paging = PageRequest.of(pageNo-1, 2);
+            Page<Blog> blogs = blogRepo.findAll(paging);
+            Map<String, Object> res = new HashMap<>();
+            res.put("blogs", blogs.getContent());
+            res.put("totalPage", blogs.getTotalPages());
+            res.put("first", blogs.isFirst());
+            res.put("last", blogs.isLast());
+            res.put("pageNo", pageNo);
+            return ResponseEntity.ok(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @GetMapping("/latest")
+    public ResponseEntity<Map<String, Object>> latest() {
+        Map<String, Object> res = new HashMap<>();
+        try {
+            List<Blog> blogs = blogRepo.findLatest();
+            res.put("latest", blogs);
+            return ResponseEntity.ok(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+            res.put("message", "Error in fetching data");
+            res.put("code", "DB_ERROR");
+            return ResponseEntity.internalServerError().build();
+        }
     }
 }
